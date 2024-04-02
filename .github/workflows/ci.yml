@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-directory: ../../api
+
 jobs:
   build-and-push: 
     name: 'Build and push'
@@ -21,4 +25,4 @@ jobs:
           echo "sha=$SHA" >> $GITHUB_OUTPUT
       
       - name: Build Docker image
-        run: docker build -t raphaelmb/nlw-passin:${{ steps.generate_sha.outputs.sha }} -f ../../api/Dockerfile
+        run: docker build -t raphaelmb/nlw-passin:${{ steps.generate_sha.outputs.sha }} .
