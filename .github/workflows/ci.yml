@@ -2,9 +2,6 @@ name: CI
 
 on:
   push:
-    paths:
-      - api/**
-      - '.github/workflows/**'
     branches:
       - main
 
